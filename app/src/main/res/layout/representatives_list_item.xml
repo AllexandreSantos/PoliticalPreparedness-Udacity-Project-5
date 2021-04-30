@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="representative"
+            type="com.allexandresantos.politicalpreparedness.representative.model.Representative" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/representative_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:profileImage="@{representative.official.photoUrl}"
+            android:layout_marginStart="@dimen/dimen8"
+            android:layout_marginTop="@dimen/dimen8"
+            android:layout_marginBottom="@dimen/dimen8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_profile" />
+
+        <TextView
+            android:id="@+id/representative_office"
+            style="@style/ListItemHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen8"
+            android:text="@{representative.office.name}"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/representative_name"
+            app:layout_constraintStart_toEndOf="@+id/representative_picture"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/representative_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ListItemDetail"
+            android:text="@{representative.official.name}"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/representative_party"
+            app:layout_constraintStart_toStartOf="@+id/representative_office"
+            app:layout_constraintTop_toBottomOf="@+id/representative_office"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/representative_party"
+            style="@style/ListItemDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{representative.official.party}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/representative_name"
+            app:layout_constraintTop_toBottomOf="@+id/representative_name"
+            tools:text="@tools:sample/lorem" />
+
+
+        <ImageView
+            android:id="@+id/webImage"
+            android:layout_width="@dimen/dimen32"
+            android:layout_height="@dimen/dimen32"
+            android:layout_marginEnd="@dimen/dimen8"
+            app:layout_constraintBottom_toBottomOf="@+id/twitterImage"
+            app:layout_constraintEnd_toStartOf="@+id/twitterImage"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintTop_toTopOf="@+id/twitterImage"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_www" />
+
+        <ImageView
+            android:id="@+id/facebookImage"
+            android:layout_width="@dimen/dimen32"
+            android:layout_height="@dimen/dimen32"
+            android:layout_marginEnd="@dimen/dimen8"
+            app:layout_constraintBottom_toBottomOf="@+id/webImage"
+            app:layout_constraintEnd_toStartOf="@+id/webImage"
+            app:layout_constraintTop_toTopOf="@+id/webImage"
+            app:srcCompat="@drawable/ic_facebook" />
+
+        <ImageView
+            android:id="@+id/twitterImage"
+            android:layout_width="@dimen/dimen32"
+            android:layout_height="@dimen/dimen32"
+            android:layout_marginEnd="@dimen/dimen8"
+            android:layout_marginBottom="@dimen/dimen8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/representative_name"
+            app:srcCompat="@drawable/ic_twitter" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

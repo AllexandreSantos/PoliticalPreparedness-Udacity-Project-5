@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.allexandresantos.android.politicalpreparedness.MainActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/election_name"
+            android:background="@color/colorPrimaryDark"
+            app:titleTextColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen8"
+            tools:title="@tools:sample/lorem"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/election_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/election_name"
+            tools:text="12 November 2055" />
+
+        <TextView
+            android:id="@+id/state_header"
+            style="@style/TextHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen24"
+            android:text="@string/election_information"
+            app:layout_constraintStart_toStartOf="@id/election_date"
+            app:layout_constraintTop_toBottomOf="@id/election_date" />
+
+        <TextView
+            android:id="@+id/state_locations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_marginTop="@dimen/dimen8"
+            android:text="@string/voting_locations"
+            app:layout_constraintStart_toStartOf="@+id/state_header"
+            app:layout_constraintTop_toBottomOf="@id/state_header" />
+
+        <TextView
+            android:id="@+id/state_ballot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_marginTop="@dimen/dimen8"
+            android:text="@string/ballot_information"
+            app:layout_constraintStart_toStartOf="@+id/state_header"
+            app:layout_constraintTop_toBottomOf="@id/state_locations" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/address_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="state_correspondence_header,address" />
+
+        <TextView
+            android:id="@+id/state_correspondence_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen8"
+            app:layout_constraintStart_toStartOf="@+id/state_header"
+            app:layout_constraintTop_toBottomOf="@id/state_ballot"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen8"
+            app:layout_constraintStart_toStartOf="@+id/state_header"
+            app:layout_constraintTop_toBottomOf="@id/state_correspondence_header"
+            tools:text="@tools:sample/lorem" />
+
+        <Button
+            android:id="@+id/saveUnsaveElectionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen24"
+            android:layout_marginEnd="@dimen/dimen24"
+            android:layout_marginBottom="@dimen/dimen16"
+            android:background="@color/colorPrimary"
+            tools:text="@tools:sample/lorem"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
