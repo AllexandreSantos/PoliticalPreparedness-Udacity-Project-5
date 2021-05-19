@@ -11,7 +11,7 @@ import com.allexandresantos.politicalpreparedness.databinding.ElectionListItemBi
 class ElectionListAdapter(private val electionListener: ElectionListener): ListAdapter<Election, ElectionListAdapter.ElectionViewHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ElectionViewHolder {
-        return ElectionViewHolder(ElectionListItemBinding.inflate(LayoutInflater.from(parent.context)))
+        return ElectionViewHolder(ElectionListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: ElectionViewHolder, position: Int) {
